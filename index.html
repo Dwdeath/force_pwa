@@ -3,13 +3,14 @@
 <html>
    <head></head>
    <body onload="removeBanner();">
-      <iframe src="https://m.moovitapp.com/?skipSplash=false" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:120%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999; useragent:mobile ">
+      <iframe id='moovit' src="https://m.moovitapp.com/?skipSplash=false" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:120%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999; useragent:mobile ">
     Your browser doesn't support iframes
       </iframe>
       <script>
          function removeBanner() {
             const adbanner = document.getElementById("additional-ad-banner");
             adbanner.remove();
+            document.getElementById('moovit').contentWindow.document.getElementById('additional-ad-banner').remove;
          }
       </script>
    </body>
